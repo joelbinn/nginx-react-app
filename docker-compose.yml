@@ -1,3 +1,6 @@
+# This docker-compose.yml file defines a single service called app that uses the 
+# Docker image my-react-app and maps port 18280 on the host machine to port 80 in the container.
+
 version: '3'
 name: my-react-app
 services:

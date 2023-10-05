@@ -1,3 +1,6 @@
+# This Dockerfile uses a multi-stage build to first build the React application using Node.js, 
+# and then copies the build artifact to an Nginx container to serve the static files.
+
 # Use an official Node.js runtime as a parent image
 FROM node:18-alpine as build
 

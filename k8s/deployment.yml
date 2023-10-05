@@ -1,0 +1,29 @@
+# This deployment manifest defines a single replica of the my-react-app deployment, 
+# which runs a container based on the my-registry/my-react-app:latest image. 
+# The container exposes port 80, which is the default port used by the React application.
+#
+# To deploy the application to Kubernetes, run the following command:
+#   kubectl apply -f deployment.yaml
+# This will create the deployment and start a single replica of the application. 
+# You can then expose the deployment using a Kubernetes service to make it accessible 
+# from outside the cluster.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-react-app
+  template:
+    metadata:
+      labels:
+        app: my-react-app
+    spec:
+      containers:
+        - name: my-react-app
+          image: joelabs/my-react-app:latest
+          ports:
+            - containerPort: 80
